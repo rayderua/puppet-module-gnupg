@@ -1,9 +1,5 @@
 #
 class gnupg::install {
 
-  package { 'gnupg':
-    ensure => $gnupg::package_ensure,
-    name   => $gnupg::package_name,
-  }
-
+  ensure_packages([$gnupg::params::package_name], { ensure => $gnupg::package_ensure })
 }
